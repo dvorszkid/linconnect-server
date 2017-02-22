@@ -50,7 +50,7 @@ _notification_header = ""
 _notification_description = ""
 
 # Configuration
-script_dir = os.path.abspath(os.path.dirname(__file__))
+script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 
 def user_specific_location(type, file):
     dir = os.path.expanduser(os.path.join('~/.' + type, app_name))
