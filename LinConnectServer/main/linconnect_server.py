@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 '''
     LinConnect: Mirror Android notifications on Linux Desktop
 
