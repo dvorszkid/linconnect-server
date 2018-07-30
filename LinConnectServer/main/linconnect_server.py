@@ -38,7 +38,6 @@ import cherrypy
 import subprocess
 from gi.repository import Notify
 from gi.repository import GLib
-import pybonjour
 import shutil
 import base64
 
@@ -168,7 +167,7 @@ def initialize_bonjour():
                                      callBack=register_callback)
     signal.signal(signal.SIGTERM, sigterm_handler)
     signal.signal(signal.SIGINT, sigterm_handler)
-    
+
     try:
         try:
             while True:
@@ -194,6 +193,7 @@ if not Notify.init("com.willhauck.linconnect"):
 
 # Start Bonjour if desired
 if parser.getboolean('connection', 'enable_bonjour') == 1:
+    import pybonjour
     thr = threading.Thread(target=initialize_bonjour)
     thr.start()
 
